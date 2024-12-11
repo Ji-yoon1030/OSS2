@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from . import db
 from .models import Challenge, UserHistory
 import random
+from datetime import datetime
 
 
 from flask import Blueprint, jsonify, request
@@ -34,6 +35,20 @@ def history():
         for h in user_history
     ]
     return jsonify(history)
+
+@bp.route('/add-history', methods=['POST'])
+def add_history():
+    data = request.json  # React에서 전송된 데이터
+    task = data.get('task')  # 완료된 챌린지
+    if not task:
+        return jsonify({"error": "Task is required"}), 400  # 에러 반환
+
+    # 데이터 저장
+    new_history = UserHistory(task=task, date_completed=datetime.now())
+    db.session.add(new_history)
+    db.session.commit()
+
+    return jsonify({"message": "History added successfully!"}), 201
 # bp = Blueprint('main', __name__)
 
 # def get_random_challenge(category):

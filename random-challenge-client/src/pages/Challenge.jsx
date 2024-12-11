@@ -9,6 +9,29 @@ function Challenge() {
   const [challenge, setChallenge] = useState(null);
   const [error, setError] = useState(null);
 
+  const handleViewProgress = () => {
+    if (challenge) {
+      fetch("/add-history", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ task: challenge.task }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to save progress");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Progress saved:", data);
+          navigate("/history"); // 저장 후 히스토리 페이지로 이동
+        })
+        .catch((err) => {
+          console.error("Error saving progress:", err.message);
+        });
+    }
+  };
+
   useEffect(() => {
     let isMounted = true;
     if (category && isMounted) {
@@ -90,7 +113,7 @@ function Challenge() {
 
               <div className={styles.buttonContainer}>
                 <button
-                  onClick={() => navigate("/history")}
+                  onClick={handleViewProgress}
                   className={styles.primaryButton}
                 >
                   View Progress
