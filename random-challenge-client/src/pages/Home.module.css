@@ -1,0 +1,126 @@
+.container {
+  min-height: 100vh;
+  background-color: #58cc02;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  padding: 2.5rem;
+  max-width: 32rem;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #4b4b4b;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #4b4b4b;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  color: #4b4b4b;
+  background-color: white;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.select:hover {
+  border-color: #58cc02;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #58cc02;
+  box-shadow: 0 0 0 3px rgba(88, 204, 2, 0.2);
+}
+
+.button {
+  background-color: #58cc02;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  transition: all 200ms;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.button:hover {
+  background-color: #46a302;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateY(-1px);
+}
+
+.button:disabled {
+  background-color: #e5e7eb;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryCard {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 200ms;
+  text-align: center;
+}
+
+.categoryCard:hover {
+  border-color: #58cc02;
+  background-color: #f7fff2;
+}
+
+.categoryCard.selected {
+  border-color: #58cc02;
+  background-color: #f7fff2;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}

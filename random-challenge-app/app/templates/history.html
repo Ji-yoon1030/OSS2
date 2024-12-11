@@ -1,0 +1,10 @@
+<!-- Placeholder for HTML file -->
+{% extends 'base.html' %} {% block content %}
+<h2>Challenge History</h2>
+<ul>
+  {% for item in history %}
+  <li>{{ item.task }} - {{ item.date_completed }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
