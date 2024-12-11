@@ -24,17 +24,15 @@ function Home() {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles.header}>
-          <h1 className={styles.title}>Daily Challenge</h1>
+          <h1 className={styles.title}>오늘의 챌린지</h1>
           <p className={styles.subtitle}>
-            Choose your category and start your journey today!
+            당신의 카테고리를 선택하고 도전을 시작하세요!
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div>
-            <label className={styles.label}>
-              Select Your Challenge Category:
-            </label>
+            <label className={styles.label}>챌린지 카테고리 선택:</label>
             <div className={styles.categories}>
               {categories.map((cat) => (
                 <div
@@ -52,7 +50,7 @@ function Home() {
           </div>
 
           <button type="submit" className={styles.button} disabled={!category}>
-            Start Challenge 🚀
+            챌린지 시작하기 🚀
           </button>
         </form>
       </div>

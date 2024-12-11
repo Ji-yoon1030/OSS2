@@ -49,11 +49,17 @@ def add_history():
     db.session.commit()
 
     return jsonify({"message": "History added successfully!"}), 201
-# bp = Blueprint('main', __name__)
 
-# def get_random_challenge(category):
-#     challenges = Challenge.query.filter_by(category=category).all()
-#     return random.choice(challenges) if challenges else None
+@bp.route('/clear-history', methods=['DELETE'])
+def clear_history():
+    try:
+        # 모든 히스토리 삭제
+        num_deleted = db.session.query(UserHistory).delete()
+        db.session.commit()
+        return jsonify({"message": f"{num_deleted} history records deleted!"}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
 
 @bp.route('/')
 def index():
