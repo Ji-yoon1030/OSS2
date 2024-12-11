@@ -1,2 +1,4 @@
-# OSS2
-My first repository is dead.......hahahahahahah
+랜덤 챌린지 앱 (Random Challenge App)
+
+매일 새로운 도전을 통해 일상의 변화를 만들어보세요! 랜덤 챌린지 앱은 사용자가 선택한 4가지 카테고리(운동, 요리, 자기계발, 창의적 활동) 중 하나에서 랜덤한 챌린지를 제공하여 즐겁고 유익한 하루를 만들어줍니다.
+
